@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  </head>
 
   <body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs>
-      <a-entity
-        id="text"
-        text="value: Caught: 0"
-        position="0.4 -0.5 -3"
-      ></a-entity>
       <a-marker preset="hiro">
         <a-entity
           id="butterfly"
@@ -26,17 +24,45 @@
         <a-entity
           cursor="fuse: false"
           position="0 0 -1"
-          geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.025"
+          geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.03"
           material="color: black; opacity: 0.5"
           animation__enter="property: scale; startEvents: mouseenter; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.7 0.7 0.7"
           event-set__enter="_event: mouseenter; material.color: green"
           animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 500; from: 0.7 0.7 0.7; to: 1 1 1"
-          animation__leave="property: scale; startEvents: mouseleave; delay: 3000; easing: easeInCubic; dur: 500; from: 0.7 0.7 0.7; to: 1 1 1"
+          animation__leave="property: scale; startEvents: mouseleave; delay: 3000; easing: easeInCubic; dur: 500; to: 1 1 1"
           event-set__leave="_event: mouseleave; material.color: black"
         >
         </a-entity>
+
+        <a-text
+          id="promptToScan"
+          value="Find a marker to show a butterfly!"
+          font="./fonts/BalooChettan2-Regular-msdf.json"
+          font-image="./fonts/BalooChettan2-Regular-msdf.png"
+          negate="false"
+          position="-0.4 -0.65 -3"
+          scale="0.2 0.2 0.1"
+        ></a-text>
+
+        <a-text
+          id="promptToCatch"
+          value="Tap the screen to catch the butterfly!"
+          position="-0.4 0.65 -3"
+          scale="0.2 0.2 0.1"
+          visible="false"
+        >
+        </a-text>
+
+        <a-entity
+          id="text"
+          text="value: Caught: 0"
+          position="0.4 -0.5 -3"
+        ></a-entity>
       </a-entity>
     </a-scene>
     <script src="./ar.js"></script>
   </body>
 </html>
+
+<!-- font="./fonts/AmaticSC-Regular-msdf.json"
+    font-image="./fonts/AmaticSC-Regular-msdf.png" -->

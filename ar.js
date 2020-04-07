@@ -1,15 +1,27 @@
 const targetEl = document.querySelector("#butterfly");
 const textEl = document.querySelector("#text");
+const scanTextEl = document.querySelector("#promptToScan");
+const catchTextEl = document.querySelector("#promptToCatch");
 const refObj = {};
 
-targetEl.addEventListener("click", function() {
+targetEl.addEventListener("click", function () {
   addToRefObj(targetEl);
   console.log(refObj);
   textEl.setAttribute("text", "value", `Caught: ${refObj[targetEl.id]}`);
   targetEl.components.animation.attrValue.enabled = true;
 });
 
-const addToRefObj = target => {
+targetEl.addEventListener("mouseenter", () => {
+  scanTextEl.object3D.visible = false;
+  catchTextEl.object3D.visible = true;
+});
+
+targetEl.addEventListener("mouseleave", () => {
+  scanTextEl.object3D.visible = true;
+  catchTextEl.object3D.visible = false;
+});
+
+const addToRefObj = (target) => {
   if (refObj[target.id]) {
     refObj[target.id] = refObj[target.id] + 1 || 0;
   } else {
