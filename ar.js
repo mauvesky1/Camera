@@ -7,10 +7,9 @@ const refObj = {};
 let catched = false;
 
 targetEl.addEventListener("click", function () {
-  console.log(catched);
+  console.log(refObj);
   if (catched === false) {
     addToRefObj(targetEl);
-    console.log(refObj);
     textEl.setAttribute("text", "value", `Caught: ${refObj[targetEl.id]}`);
     targetEl.components.animation.attrValue.enabled = true;
     catchTextEl.object3D.visible = false;
@@ -28,19 +27,19 @@ targetEl.addEventListener("mouseleave", () => {
   catchTextEl.object3D.visible = false;
 });
 
-const addToRefObj = (target) => {
-  if (refObj[target.id]) {
-    refObj[target.id] = refObj[target.id] + 1 || 0;
-  } else {
-    refObj[target.id] = 1;
-  }
-  return refObj;
-};
-
 const setVisibility = () => {
   if (!catchTextEl.object3D.visible) {
     scanTextEl.object3D.visible = true;
   }
+};
+
+const addToRefObj = (target) => {
+  if (refObj[target.classList.value]) {
+    refObj[target.classList.value] = refObj[target.classList.value] + 1 || 0;
+  } else {
+    refObj[target.classList.value] = 1;
+  }
+  return refObj;
 };
 
 //how to create new element on page!

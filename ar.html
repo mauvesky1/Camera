@@ -12,9 +12,10 @@
       <a-marker preset="hiro">
         <a-entity
           id="butterfly"
+          class="butterfly1"
+          gltf-model="./butterflies/butterfly1.gltf"
           position="0 0 1"
-          scale="1 1 1"
-          gltf-model="./archive/PUSHILIN_butterfly.gltf"
+          scale="0.5 0.5 0.5"
           rotation="60 0 360"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         >
@@ -69,9 +70,7 @@
         ></a-entity>
       </a-entity>
     </a-scene>
+    <script src="animationLoader.js"></script>
     <script src="./ar.js"></script>
   </body>
 </html>
-
-<!-- font="./fonts/AmaticSC-Regular-msdf.json"
-    font-image="./fonts/AmaticSC-Regular-msdf.png" -->
