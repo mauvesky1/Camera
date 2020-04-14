@@ -6,6 +6,8 @@ const textEl = document.querySelector("#text");
 const scanTextEl = document.querySelector("#promptToScan");
 const catchTextEl = document.querySelector("#promptToCatch");
 const gotItTextEl = document.querySelector("#catchedIt");
+const starsEl = document.querySelector(".stars");
+
 const refObj = {};
 let catched1 = false;
 let catched2 = false;
@@ -84,6 +86,7 @@ function handleClick(element, catchValue) {
     setTimeout((event) => {
       textEl.object3D.visible = false;
     }, 2000);
+    starsEl.setAttribute("particle-system", "enabled", "true");
   } else {
     textEl.setAttribute(
       "value",
@@ -95,7 +98,6 @@ function handleClick(element, catchValue) {
       textEl.object3D.visible = false;
     }, 2000);
   }
-  console.log(refObj, "reference object");
 }
 
 const setVisibility = () => {
