@@ -10,10 +10,10 @@ const butterflyArray1 = [
   "Punchinello",
 ];
 const butterflyArray2 = [
-  "butterfly4",
-  "butterfly5",
-  "butterfly6",
-  "butterfly14",
+  "Red_Stargazer",
+  "Starburst",
+  "Violet_Beuregard",
+  "Scryers_Wing",
 ];
 const butterflyArray3 = [
   "butterfly7",
@@ -22,7 +22,7 @@ const butterflyArray3 = [
   "butterfly15",
 ];
 const butterflyArray4 = [
-  "butterfly10",
+  "Haywane",
   "butterfly11",
   "butterfly11",
   "butterfly12",
@@ -54,6 +54,18 @@ setTimeout(() => {
 
 setTimeout(() => {
   butterfly.classList.value = butterfly
+    .getAttribute("gltf-model")
+    .slice(14, -5);
+
+  butterfly2.classList.value = butterfly2
+    .getAttribute("gltf-model")
+    .slice(14, -5);
+
+  butterfly3.classList.value = butterfly3
+    .getAttribute("gltf-model")
+    .slice(14, -5);
+
+  butterfly4.classList.value = butterfly4
     .getAttribute("gltf-model")
     .slice(14, -5);
 }, 1500);

@@ -94,6 +94,7 @@ function handleClick(element, catchValue) {
       textEl.object3D.visible = false;
     }, 2000);
   }
+  console.log(refObj);
 }
 
 const setVisibility = () => {
