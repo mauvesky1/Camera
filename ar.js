@@ -31,6 +31,7 @@ secondTargetEl.addEventListener("click", (event) => {
   handleClick(secondTargetEl, catched2);
   catched2 = true;
 });
+
 secondTargetEl.addEventListener("mouseenter", () => {
   scanTextEl.object3D.visible = false;
   catchTextEl.object3D.visible = true;
@@ -94,7 +95,7 @@ function handleClick(element, catchValue) {
       textEl.object3D.visible = false;
     }, 2000);
   }
-  console.log(refObj);
+  console.log(refObj, "reference object");
 }
 
 const setVisibility = () => {

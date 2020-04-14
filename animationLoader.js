@@ -22,7 +22,7 @@ const butterflyArray3 = [
   "butterfly15",
 ];
 const butterflyArray4 = [
-  "Haywane",
+  "butterfly10",
   "butterfly11",
   "butterfly11",
   "butterfly12",
