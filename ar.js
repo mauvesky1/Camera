@@ -71,15 +71,7 @@ function handleClick(element, catchValue) {
     You can now view it in your collection!`
     );
     element.components.animation.attrValue.enabled = true;
-<<<<<<< HEAD
     twoSecondPrompt(congratsEl);
-=======
-    setAsVisible(textEl);
-    setTimeout((event) => {
-      textEl.object3D.visible = false;
-    }, 2000);
-    starsEl.setAttribute("particle-system", "enabled", "true");
->>>>>>> a0203e8cb18e951ba5088ef745c20a3b366a460a
   } else {
     congratsEl.setAttribute(
       "value",
