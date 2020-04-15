@@ -6,6 +6,8 @@ const congratsEl = document.querySelector("#congratsPrompt");
 const scanTextEl = document.querySelector("#promptToScan");
 const catchTextEl = document.querySelector("#promptToCatch");
 const gotItTextEl = document.querySelector("#catchedIt");
+const starsEl = document.querySelector(".stars");
+
 const refObj = {};
 let catched1 = false;
 let catched2 = false;
@@ -70,6 +72,7 @@ function handleClick(element, catchValue) {
     );
     element.components.animation.attrValue.enabled = true;
     twoSecondPrompt(congratsEl);
+
   } else {
     congratsEl.setAttribute(
       "value",
