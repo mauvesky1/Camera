@@ -5,11 +5,11 @@ const butterfly4 = document.querySelector("#butterfly4");
 const butterfly5 = document.querySelector("#butterfly5");
 
 const butterflyArrays = {
-  marker1: ["butterfly1", "butterfly2", "butterfly3"],
-  marker2: ["butterfly4", "butterfly5", "butterfly6"],
-  marker3: ["butterfly7", "butterfly8", "butterfly9"],
-  marker4: ["butterfly10", "butterfly11", "butterfly12"],
-  marker5: ["butterfly13", "butterfly14", "butterfly15"],
+  marker1: ["Midas", "Mother Of Pearl", "Mexican Bluewing"],
+  marker2: ["Peacock", "Frosted Tip", "Apetura Iris"],
+  marker3: ["Starlet", "Stargazer", "Swirley-Harley"],
+  marker4: ["Haywain", "Shoreline", "Purple Emperor"],
+  marker5: ["Vive La France", "Scrying Glass", "Seafoam"],
 };
 
 const randomiser = () => {
