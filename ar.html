@@ -22,16 +22,15 @@
         url="https://raw.githubusercontent.com/conwayhub/markertests/master/pattern-Bfly2.patt"
       >
         <a-entity
-          id="butterfly"
+          id="butterfly1"
           class="butterfly1"
-          gltf-model="./butterflies/butterfly1.gltf"
+          gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
           rotation="60 0 360"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         >
         </a-entity>
-
       </a-marker>
 
       <a-marker
@@ -41,7 +40,7 @@
         <a-entity
           id="butterfly2"
           class="butterfly2"
-          gltf-model="./butterflies/butterfly1.gltf"
+          gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
           rotation="60 0 360"
@@ -55,7 +54,7 @@
         <a-entity
           id="butterfly3"
           class="butterfly3"
-          gltf-model="./butterflies/butterfly1.gltf"
+          gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
           rotation="60 0 360"
@@ -70,7 +69,7 @@
         <a-entity
           id="butterfly4"
           class="butterfly4"
-          gltf-model="./butterflies/butterfly1.gltf"
+          gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
           rotation="60 0 360"
@@ -78,6 +77,18 @@
         ></a-entity>
       </a-marker>
 
+      <a-marker preset="hiro">
+        <a-entity
+          id="butterfly5"
+          class="butterfly5"
+          gltf-model=""
+          position="0 0 1"
+          scale="0.5 0.5 0.5"
+          rotation="60 0 360"
+          animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
+        >
+        </a-entity>
+      </a-marker>
       <a-entity camera>
         <a-entity
           cursor="fuse: false"
@@ -114,8 +125,6 @@
           visible="false"
         >
         </a-text>
-
-        </a-text>
         <a-text
           id="congratsPrompt"
           value=""
@@ -128,9 +137,10 @@
         ></a-text>
       </a-entity>
     </a-scene>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.3/qs.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
     <script src="animationLoader.js"></script>
-    <script src="./ar.js"></script>
+    <script type="module" src="./ar.js"></script>
   </body>
 </html>
