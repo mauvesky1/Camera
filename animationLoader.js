@@ -1,66 +1,56 @@
-const butterfly = document.querySelector("#butterfly");
+const butterfly1 = document.querySelector("#butterfly1");
 const butterfly2 = document.querySelector("#butterfly2");
 const butterfly3 = document.querySelector("#butterfly3");
 const butterfly4 = document.querySelector("#butterfly4");
+const butterfly5 = document.querySelector("#butterfly5");
 
-const butterflyArray1 = [
-  "butterfly1",
-  "butterfly2",
-  "butterfly3",
-  "butterfly4",
-];
-const butterflyArray2 = [
-  "butterfly5",
-  "butterfly6",
-  "butterfly7",
-  "butterfly8",
-];
-const butterflyArray3 = [
-  "butterfly9",
-  "butterfly10",
-  "butterfly11",
-  "butterfly12",
-];
-const butterflyArray4 = [
-  "butterfly13",
-  "butterfly14",
-  "butterfly15",
-  "butterfly15",
-];
+const butterflyArrays = {
+  marker1: ["butterfly1", "butterfly2", "butterfly3"],
+  marker2: ["butterfly4", "butterfly5", "butterfly6"],
+  marker3: ["butterfly7", "butterfly8", "butterfly9"],
+  marker4: ["butterfly10", "butterfly11", "butterfly12"],
+  marker5: ["butterfly13", "butterfly14", "butterfly15"],
+};
 
 const randomiser = () => {
-  return Math.floor(Math.random() * 4);
+  return Math.floor(Math.random() * 3);
 };
 
 setTimeout(() => {
-  butterfly.setAttribute(
+  butterfly1.setAttribute(
     "gltf-model",
     `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArray1[randomiser()]
+      butterflyArrays.marker1[randomiser()]
     }.gltf`
   );
   butterfly2.setAttribute(
     "gltf-model",
     `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArray2[randomiser()]
+      butterflyArrays.marker2[randomiser()]
     }.gltf`
   );
   butterfly3.setAttribute(
     "gltf-model",
     `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArray3[randomiser()]
+      butterflyArrays.marker3[randomiser()]
     }.gltf`
   );
   butterfly4.setAttribute(
     "gltf-model",
     `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArray4[randomiser()]
+      butterflyArrays.marker4[randomiser()]
     }.gltf`
   );
-}, 500);
+  butterfly5.setAttribute(
+    "gltf-model",
+    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
+      butterflyArrays.marker5[randomiser()]
+    }.gltf`
+  );
+}, 100);
 
 setTimeout(() => {
-  butterfly.classList.value = butterfly
+  butterfly1.classList.value = butterfly1
     .getAttribute("gltf-model")
     .slice(68, -5);
 
@@ -73,6 +63,10 @@ setTimeout(() => {
     .slice(68, -5);
 
   butterfly4.classList.value = butterfly4
+    .getAttribute("gltf-model")
+    .slice(68, -5);
+
+  butterfly5.classList.value = butterfly5
     .getAttribute("gltf-model")
     .slice(68, -5);
 }, 1500);
