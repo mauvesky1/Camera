@@ -19,7 +19,7 @@
       </a-assets>
       <a-marker
         type="pattern"
-        url="https://raw.githubusercontent.com/conwayhub/markertests/master/pattern-Bfly2.patt"
+        url="https://raw.githubusercontent.com/conwayhub/markertests/master/Markers/simplemarker1.patt"
       >
         <a-entity
           id="butterfly1"
@@ -35,7 +35,7 @@
 
       <a-marker
         type="pattern"
-        url="https://raw.githubusercontent.com/conwayhub/markertests/master/Thickums.patt"
+        url="https://raw.githubusercontent.com/conwayhub/markertests/master/Markers/simplemarker2.patt"
       >
         <a-entity
           id="butterfly2"
@@ -49,7 +49,7 @@
       </a-marker>
       <a-marker
         type="pattern"
-        url="https://raw.githubusercontent.com/conwayhub/markertests/master/pattern-Bfly3.patt"
+        url="https://raw.githubusercontent.com/conwayhub/markertests/master/Markers/simplemarker3.patt"
       >
         <a-entity
           id="butterfly3"
@@ -64,7 +64,7 @@
 
       <a-marker
         type="pattern"
-        url="https://raw.githubusercontent.com/conwayhub/markertests/master/pattern-Bfly4.patt"
+        url="https://raw.githubusercontent.com/conwayhub/markertests/master/Markers/simplemarker4.patt"
       >
         <a-entity
           id="butterfly4"
@@ -77,7 +77,10 @@
         ></a-entity>
       </a-marker>
 
-      <a-marker preset="hiro">
+      <a-marker
+        type="pattern"
+        url="https://raw.githubusercontent.com/conwayhub/markertests/master/Markers/simplemarker5.patt"
+      >
         <a-entity
           id="butterfly5"
           class="butterfly5"
@@ -95,6 +98,7 @@
           position="0 0 -1"
           geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.03"
           material="color: black; opacity: 0.5"
+          hiro
           animation__enter="property: scale; startEvents: mouseenter; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.7 0.7 0.7"
           event-set__enter="_event: mouseenter; material.color: green"
           animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 500; from: 0.7 0.7 0.7; to: 1 1 1"
