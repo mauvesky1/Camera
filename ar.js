@@ -3,9 +3,9 @@ const secondButterfly = document.querySelector("#butterfly2");
 const thirdButterfly = document.querySelector("#butterfly3");
 const fourthButterfly = document.querySelector("#butterfly4");
 const fifthButterfly = document.querySelector("#butterfly5");
-const congratsText = document.querySelector("#congratsPrompt");
 const scanText = document.querySelector("#promptToScan");
 const catchText = document.querySelector("#promptToCatch");
+const congratsText = document.querySelector("#congratsPrompt");
 
 const firebaseConfig = {
   apiKey: "AIzaSyB4tz8vEzmfsVvXs2hcKogzIdWECdNeQbc",
@@ -64,21 +64,13 @@ fifthButterfly.addEventListener("click", (event) => {
 });
 
 const mouseEnter = () => {
-  if (!congratsText.object3D.visible) {
-    setTimeout((event) => {
-      scanText.object3D.visible = false;
-      catchText.object3D.visible = true;
-    }, 300);
-  }
+  scanText.object3D.visible = false;
+  catchText.object3D.visible = true;
 };
 
 const mouseLeave = () => {
-  if (!congratsText.object3D.visible) {
-    setTimeout((event) => {
-      scanText.object3D.visible = true;
-      catchText.object3D.visible = false;
-    }, 500);
-  }
+  catchText.object3D.visible = false;
+  setTimeout(setVisibility, 2000);
 };
 
 firstButterfly.addEventListener("mouseenter", mouseEnter);
@@ -97,9 +89,8 @@ fifthButterfly.addEventListener("mouseenter", mouseEnter);
 fifthButterfly.addEventListener("mouseleave", mouseLeave);
 
 const handleClick = (butterfly, catchValue) => {
-  console.log(PID);
-  scanText.object3D.visible = false;
   catchText.object3D.visible = false;
+  fourSecondPrompt(congratsText, butterfly);
   if (!catchValue) {
     congratsText.setAttribute(
       "value",
@@ -107,27 +98,32 @@ const handleClick = (butterfly, catchValue) => {
     You can now view it in your collection!`
     );
     butterfly.components.animation.attrValue.enabled = true;
-    twoSecondPrompt(congratsText);
     docRef.update({ [butterfly.classList.value]: increment });
   } else {
     congratsText.setAttribute(
       "value",
-      `You've already caught this ${butterfly.classList.value}!`
+      `You have already caught this ${butterfly.classList.value}!`
     );
-    twoSecondPrompt(congratsText);
   }
 };
 
 const setVisibility = () => {
-  if (!catchText.object3D.visible) {
+  if (
+    catchText.object3D.visible === false &&
+    congratsText.object3D.visible === false
+  ) {
     scanText.object3D.visible = true;
   }
 };
 
-const twoSecondPrompt = (element) => {
+const fourSecondPrompt = (element, butterfly) => {
   element.object3D.visible = true;
   setTimeout((event) => {
     element.object3D.visible = false;
-    scanText.object3D.visible = true;
-  }, 2000);
+    if (butterfly.states[0] === "cursor-hovered") {
+      catchText.object3D.visible = true;
+    } else {
+      scanText.object3D.visible = true;
+    }
+  }, 4000);
 };
