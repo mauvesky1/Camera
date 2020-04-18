@@ -14,9 +14,6 @@
       artoolkit="sourceType: webcam;"
       renderer="logarithmicDepthBuffer: true;"
     >
-      <a-assets>
-        <img id="text-box" src="./textbox.png" />
-      </a-assets>
       <a-marker
         type="pattern"
         url="https://raw.githubusercontent.com/conwayhub/markertests/master/Markers/simplemarker1.patt"
@@ -27,7 +24,7 @@
           gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
-          rotation="60 0 360"
+          rotation="60 0 0"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         >
         </a-entity>
@@ -43,7 +40,7 @@
           gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
-          rotation="60 0 360"
+          rotation="60 0 0"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         ></a-entity>
       </a-marker>
@@ -57,7 +54,7 @@
           gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
-          rotation="60 0 360"
+          rotation="60 0 0"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         ></a-entity>
       </a-marker>
@@ -72,7 +69,7 @@
           gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
-          rotation="60 0 360"
+          rotation="60 0 0"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         ></a-entity>
       </a-marker>
@@ -87,7 +84,7 @@
           gltf-model=""
           position="0 0 1"
           scale="0.5 0.5 0.5"
-          rotation="60 0 360"
+          rotation="60 0 0"
           animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         >
         </a-entity>
@@ -110,34 +107,39 @@
         <a-text
           id="promptToScan"
           value="Let's find a marker to catch a butterlfy!"
-          font="./fonts/Bubblegum-msdf.json"
-          color="#c3ebb2"
+          font="./fonts/font5-msdf.json"
+          font-image="./fonts/font5-msdf.png"
           negate="false"
-          position="0 -1 -5"
-          scale="0.4 0.4 0.4"
-          visible="true"
+          position="0 -0.65 -3"
+          scale="0.2 0.2 0.2"
+          wrapCount="50"
+          align="center"
         ></a-text>
 
         <a-text
           id="promptToCatch"
           value="Quick! Tap your screen to catch it!"
-          font="./fonts/Bubblegum-msdf.json"
-          color="#c3ebb2"
+          font="./fonts/font5-msdf.json"
+          font-image="./fonts/font5-msdf.png"
           negate="false"
-          position="0 -1 -5 "
-          scale="0.4 0.4 0.4"
+          position="0 0.65 -3"
+          scale="0.2 0.2 0.2"
           visible="false"
+          wrapCount="50"
+          align="center"
         >
         </a-text>
         <a-text
           id="congratsPrompt"
           value=""
-          font="./fonts/Bubblegum-msdf.json"
-          color="#006400"
-          negate="false"
-          position="0 -1 -5 "
-          scale="0.4 0.4 0.4"
+          font="./fonts/font5-msdf.json"
+          font-image="./fonts/font5-msdf.png"
+          position="0 -0.65 -3"
+          scale="0.2 0.2 0.2"
           visible="false"
+          wrapCount="50"
+          align="center"
+          negate="false"
         ></a-text>
       </a-entity>
     </a-scene>
