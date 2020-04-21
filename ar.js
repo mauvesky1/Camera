@@ -39,47 +39,47 @@ const docRef = firestore.doc(`parents/${PID}/userProfiles/${CID}`);
 
 const increment = firebase.firestore.FieldValue.increment(1);
 
-let catched1 = false;
-let catched2 = false;
-let catched3 = false;
-let catched4 = false;
-let catched5 = false;
+let caught1 = false;
+let caught2 = false;
+let caught3 = false;
+let caught4 = false;
+let caught5 = false;
 
 firstButterfly.addEventListener("click", (event) => {
-  handleClick(firstButterfly, catched1);
-  catched1 = true;
+  handleClick(firstButterfly, caught1);
+  caught1 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
     location.href = `https://mystifying-nightingale-5da125.netlify.app/?username=${CID}&&${randomButterflyOne}=true`;
   }
 });
 
 secondButterfly.addEventListener("click", (event) => {
-  handleClick(secondButterfly, catched2);
-  catched2 = true;
+  handleClick(secondButterfly, caught2);
+  caught2 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
     location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyTwo}`;
   }
 });
 
 thirdButterfly.addEventListener("click", (event) => {
-  handleClick(thirdButterfly, catched3);
-  catched3 = true;
+  handleClick(thirdButterfly, caught3);
+  caught3 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
     location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyThree}`;
   }
 });
 
 fourthButterfly.addEventListener("click", (event) => {
-  handleClick(fourthButterfly, catched4);
-  catched4 = true;
+  handleClick(fourthButterfly, caught4);
+  caught4 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
     location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFour}`;
   }
 });
 
 fifthButterfly.addEventListener("click", (event) => {
-  handleClick(fifthButterfly, catched5);
-  catched5 = true;
+  handleClick(fifthButterfly, caught5);
+  caught5 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
     location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFive}`;
   }
