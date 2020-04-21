@@ -63,6 +63,8 @@ fourthButterfly.addEventListener("click", (event) => {
 fifthButterfly.addEventListener("click", (event) => {
   handleClick(fifthButterfly, caught5);
   caught5 = true;
+  console.log("just checking");
+
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
     location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFive}`;
   }
