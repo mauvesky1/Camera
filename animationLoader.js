@@ -16,36 +16,32 @@ const randomiser = () => {
   return Math.floor(Math.random() * 3);
 };
 
+const randomButterflyOne = butterflyArrays.marker1[randomiser()];
+const randomButterflyTwo = butterflyArrays.marker1[randomiser()];
+const randomButterflyThree = butterflyArrays.marker1[randomiser()];
+const randomButterflyFour = butterflyArrays.marker1[randomiser()];
+const randomButterflyFive = butterflyArrays.marker1[randomiser()];
+
 setTimeout(() => {
   butterfly1.setAttribute(
     "gltf-model",
-    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArrays.marker1[randomiser()]
-    }.gltf`
+    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${randomButterflyOne}.gltf`
   );
   butterfly2.setAttribute(
     "gltf-model",
-    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArrays.marker2[randomiser()]
-    }.gltf`
+    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${randomButterflyTwo}.gltf`
   );
   butterfly3.setAttribute(
     "gltf-model",
-    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArrays.marker3[randomiser()]
-    }.gltf`
+    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${randomButterflyThree}.gltf`
   );
   butterfly4.setAttribute(
     "gltf-model",
-    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArrays.marker4[randomiser()]
-    }.gltf`
+    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${randomButterflyFour}.gltf`
   );
   butterfly5.setAttribute(
     "gltf-model",
-    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${
-      butterflyArrays.marker5[randomiser()]
-    }.gltf`
+    `https://raw.githubusercontent.com/Norbs89/ardemo/master/butterflies/${randomButterflyFive}.gltf`
   );
 }, 100);
 
@@ -70,3 +66,11 @@ setTimeout(() => {
     .getAttribute("gltf-model")
     .slice(68, -5);
 }, 1500);
+
+export {
+  randomButterflyOne,
+  randomButterflyTwo,
+  randomButterflyThree,
+  randomButterflyFour,
+  randomButterflyFive,
+};

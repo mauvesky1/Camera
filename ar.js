@@ -1,3 +1,10 @@
+import {
+  randomButterflyOne,
+  randomButterflyTwo,
+  randomButterflyThree,
+  randomButterflyFour,
+  randomButterflyFive,
+} from "./animationLoader.js";
 const firstButterfly = document.querySelector("#butterfly1");
 const secondButterfly = document.querySelector("#butterfly2");
 const thirdButterfly = document.querySelector("#butterfly3");
@@ -41,26 +48,41 @@ let catched5 = false;
 firstButterfly.addEventListener("click", (event) => {
   handleClick(firstButterfly, catched1);
   catched1 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `https://mystifying-nightingale-5da125.netlify.app/?username=${CID}&&${randomButterflyOne}=true`;
+  }
 });
 
 secondButterfly.addEventListener("click", (event) => {
   handleClick(secondButterfly, catched2);
   catched2 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyTwo}`;
+  }
 });
 
 thirdButterfly.addEventListener("click", (event) => {
   handleClick(thirdButterfly, catched3);
   catched3 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyThree}`;
+  }
 });
 
 fourthButterfly.addEventListener("click", (event) => {
   handleClick(fourthButterfly, catched4);
   catched4 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFour}`;
+  }
 });
 
 fifthButterfly.addEventListener("click", (event) => {
   handleClick(fifthButterfly, catched5);
   catched5 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFive}`;
+  }
 });
 
 const mouseEnter = () => {
