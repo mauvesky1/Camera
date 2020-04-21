@@ -1,3 +1,10 @@
+import {
+  randomButterflyOne,
+  randomButterflyTwo,
+  randomButterflyThree,
+  randomButterflyFour,
+  randomButterflyFive,
+} from "./animationLoader.js";
 const firstButterfly = document.querySelector("#butterfly1");
 const secondButterfly = document.querySelector("#butterfly2");
 const thirdButterfly = document.querySelector("#butterfly3");
@@ -7,17 +14,6 @@ const scanText = document.querySelector("#promptToScan");
 const catchText = document.querySelector("#promptToCatch");
 const congratsText = document.querySelector("#congratsPrompt");
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB4tz8vEzmfsVvXs2hcKogzIdWECdNeQbc",
-  authDomain: "backend-679e8.firebaseapp.com",
-  databaseURL: "https://backend-679e8.firebaseio.com",
-  projectId: "backend-679e8",
-  storageBucket: "backend-679e8.appspot.com",
-  messagingSenderId: "363772688197",
-  appId: "1:363772688197:web:1b1ae070f6afdaf41eb02c",
-  measurementId: "G-6FSQXQCNBN",
-};
-
 const { PID } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
@@ -26,41 +22,52 @@ const { CID } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
-firebase.initializeApp(firebaseConfig);
-let firestore = firebase.firestore();
-const docRef = firestore.doc(`parents/${PID}/userProfiles/${CID}`);
-
-const increment = firebase.firestore.FieldValue.increment(1);
-
-let catched1 = false;
-let catched2 = false;
-let catched3 = false;
-let catched4 = false;
-let catched5 = false;
+let caught1 = false;
+let caught2 = false;
+let caught3 = false;
+let caught4 = false;
+let caught5 = false;
 
 firstButterfly.addEventListener("click", (event) => {
-  handleClick(firstButterfly, catched1);
-  catched1 = true;
+  handleClick(firstButterfly, caught1);
+  caught1 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `https://mystifying-nightingale-5da125.netlify.app/?username=${CID}&&${randomButterflyOne}=true`;
+  }
 });
 
 secondButterfly.addEventListener("click", (event) => {
-  handleClick(secondButterfly, catched2);
-  catched2 = true;
+  handleClick(secondButterfly, caught2);
+  caught2 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyTwo}`;
+  }
 });
 
 thirdButterfly.addEventListener("click", (event) => {
-  handleClick(thirdButterfly, catched3);
-  catched3 = true;
+  handleClick(thirdButterfly, caught3);
+  caught3 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyThree}`;
+  }
 });
 
 fourthButterfly.addEventListener("click", (event) => {
-  handleClick(fourthButterfly, catched4);
-  catched4 = true;
+  handleClick(fourthButterfly, caught4);
+  caught4 = true;
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFour}`;
+  }
 });
 
 fifthButterfly.addEventListener("click", (event) => {
-  handleClick(fifthButterfly, catched5);
-  catched5 = true;
+  handleClick(fifthButterfly, caught5);
+  caught5 = true;
+  console.log("just checking");
+
+  if (caught1 || caught2 || caught3 || caught4 || caught5) {
+    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFive}`;
+  }
 });
 
 const mouseEnter = () => {
@@ -98,7 +105,6 @@ const handleClick = (butterfly, catchValue) => {
     You can now view it in your collection!`
     );
     butterfly.components.animation.attrValue.enabled = true;
-    docRef.update({ [butterfly.classList.value]: increment });
   } else {
     congratsText.setAttribute(
       "value",
