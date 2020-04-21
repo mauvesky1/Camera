@@ -40,7 +40,7 @@ secondButterfly.addEventListener("click", (event) => {
   handleClick(secondButterfly, caught2);
   caught2 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
-    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyTwo}`;
+    location.href = `https://mystifying-nightingale-5da125.netlify.app/?butterfly1=${randomButterflyTwo}`;
   }
 });
 
@@ -48,7 +48,7 @@ thirdButterfly.addEventListener("click", (event) => {
   handleClick(thirdButterfly, caught3);
   caught3 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
-    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyThree}`;
+    location.href = `https://mystifying-nightingale-5da125.netlify.app/?butterfly1=${randomButterflyThree}`;
   }
 });
 
@@ -56,17 +56,17 @@ fourthButterfly.addEventListener("click", (event) => {
   handleClick(fourthButterfly, caught4);
   caught4 = true;
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
-    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFour}`;
+    location.href = `https://mystifying-nightingale-5da125.netlify.app/?butterfly1=${randomButterflyFour}`;
   }
 });
 
 fifthButterfly.addEventListener("click", (event) => {
   handleClick(fifthButterfly, caught5);
   caught5 = true;
-  console.log("just checking");
+  console.log("just checkinggit");
 
   if (caught1 || caught2 || caught3 || caught4 || caught5) {
-    location.href = `http://www.thevuewebsite.com/end-game-screen/?butterfly1=${randomButterflyFive}`;
+    location.href = `https://mystifying-nightingale-5da125.netlify.app/?butterfly1=${randomButterflyFive}`;
   }
 });
 
